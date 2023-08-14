@@ -8,7 +8,8 @@ const SavedPost = () => {
     const [posts, setPosts] = useState([]);
     const jwtToken = localStorage.getItem('jwtToken');
     const headers = {
-        'authToken': jwtToken,
+         'authToken': jwtToken,
+       
     };
     const [change,setChange]=useState('false');
     useEffect(() => {

@@ -26,7 +26,7 @@ const EditPost = () => {
         console.log(response.data);
       })
       .catch((error) => {
-        console.error('Error fetching posts:', error);
+        console.error('Error fetching post:', error);
     
       });
   }, []);

@@ -13,6 +13,8 @@ const PostDetail = () => {
   const [isFollow, setIsFollow] = useState('false');
   const [isSaved, setIsSaved] = useState('false');
   const [isComment, setIsComment] = useState('false');
+  const [readTime, setReadTime] = useState(0);
+  const [startTime, setStartTime] = useState(Date.now());
   const jwtToken = localStorage.getItem('jwtToken');
   var flag = false;
 
@@ -79,6 +81,22 @@ const PostDetail = () => {
       });
 
   }, []);
+
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const currentTime = Date.now();
+      const elapsedSeconds = Math.floor((currentTime - startTime) / 1000);
+      setReadTime(elapsedSeconds);
+    }, 1000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [startTime]);
+
+
+
 
 
 
@@ -183,7 +201,7 @@ const PostDetail = () => {
   }
 
   const handleSavePost = () => {
-    axios.post(`http://127.0.0.1:3000/author/savedPosts/${postId}`, {}, { headers })
+    axios.post(`http://127.0.0.1:3000/author/saveForLater/${postId}`, {}, { headers })
       .then((response) => {
         console.log(response.data);
         setIsSaved(false);
@@ -216,7 +234,7 @@ const PostDetail = () => {
             {isLiked ? <p>{post.likes_count + 1}</p> : <p>{post.likes_count}</p>}
 
             {
-              isSaved ?  <i onClick={handleSavePost} class="bi bi-bookmark"></i>:<i class="bi bi-bookmark-fill"></i>
+                 isSaved ? <i onClick={handleSavePost} className="bi bi-bookmark"></i> : <i className="bi bi-bookmark-fill"></i>
             }
 
           </div>
@@ -233,7 +251,7 @@ const PostDetail = () => {
       </div>
       <p className='clr'>Did you enjoy Reading it? Leave a comment</p>
   
-      {/* <i onClick={openCommentPopup} class="fa fa-comment"></i> */}
+     
       <button className='cmnt' onClick={openCommentPopup}>Comment</button>
 
       <p className='clr'>No of comments : {post.comments_count}</p>

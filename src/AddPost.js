@@ -12,7 +12,8 @@ const AddPost = () => {
   const jwtToken = localStorage.getItem('jwtToken');
    
   const headers = {
-    'authToken': jwtToken,
+     'authToken': jwtToken,
+    
   };
   useEffect(()=>{
     if(!jwtToken)
@@ -73,7 +74,7 @@ const AddPost = () => {
       })
       .catch((error) => {
         console.error('Error saving post:', error);
-        // Implement error handling logic here
+      
       });
       navigate('/');
   };

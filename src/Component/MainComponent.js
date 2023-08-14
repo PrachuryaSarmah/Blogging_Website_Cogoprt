@@ -51,7 +51,7 @@ const MainComponent = () => {
         <div className="filters-search">
         <h2>Filter and Sort</h2>
           <div className='filter1'>
-            {/* Dropdown list for Author */}
+            
             <select
               name="author"
               value={filters.author}

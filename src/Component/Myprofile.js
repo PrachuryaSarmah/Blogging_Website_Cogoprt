@@ -26,7 +26,6 @@ const MyProfile = () => {
         console.error('Error fetching author details:', error);
       });
 
-    // Retrieve selected payment plan from local storage
     const planId = localStorage.getItem('selectedPlan');
     setSelectedPlan(planId);
   }, []);
@@ -76,7 +75,7 @@ const MyProfile = () => {
               <h1>Number Of Followers: {authorDetails.followers_count}</h1>
               <h1>Email: {authorDetails.email}</h1>
               <p>{authorDetails.about || 'No Bio Added'}</p>
-              <p>Selected Payment Plan: {selectedPlan}</p> {/* Display selected payment plan */}
+              {/* <p>Selected Payment Plan: {selectedPlan}</p>  */}
             </div>
             <div>
               <textarea

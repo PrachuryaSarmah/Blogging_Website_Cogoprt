@@ -43,7 +43,7 @@ const Navbar = () => {
           ) : (
             <a href="/login">Login</a>
           )}
-          {/* <i onClick={toggleModal} class="fa fa-user fa-lg"></i> */}
+          
           <button className="btnn" onClick={toggleModal} >My Profile</button>
           {modal && (
             <div className="modal">
@@ -51,7 +51,7 @@ const Navbar = () => {
               <div className="modal-content">
                 <div className="link-container">
                   <a href="/myprofile"> Profile</a>
-                  {/* <button><a href="/myprofile"> Profile</a></button> */}
+                 
                   
                   <a href="/mypost"> My Posts</a>
                   <a href="/savedpost">Saved Posts</a>

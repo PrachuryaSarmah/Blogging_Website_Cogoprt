@@ -15,6 +15,9 @@ import SavedPost from './Component/SavedPost';
 import Draft from './Component/Drafts';
 import Followers from './Component/Followers';
 import Payment from './Component/Payment';
+import Movies from './Component/Movies';
+import Userarticle from './Component/Userarticle';
+import Userarticleb from './Component/Userarticleb';
 
 function App() {
   return (
@@ -22,6 +25,8 @@ function App() {
       <div className='app'>
         <Navbar />
         <Banner />
+       
+        
         <div className="content">
           <Routes>
             <Route path="/" element={<MainComponent />} />
@@ -37,6 +42,9 @@ function App() {
             <Route path="/followers" element={<Followers />} />
             <Route path="/payment" element={<Payment />} />
             <Route path="/authorprofile/:authorId" element={<AuthorProfile />} />
+            <Route path="/movies" element={ <Movies/>} />
+            <Route path="/userarticle" element={ <Userarticle/>} />
+            <Route path="/userarticleb" element={ <Userarticleb/>} />
           
           </Routes>
         </div>

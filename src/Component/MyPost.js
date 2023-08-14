@@ -9,6 +9,7 @@ const MyPost = () => {
     const jwtToken = localStorage.getItem('jwtToken');
     const headers = {
         'authToken': jwtToken,
+        
     };
     const [change,setChange]=useState('false');
     useEffect(() => {

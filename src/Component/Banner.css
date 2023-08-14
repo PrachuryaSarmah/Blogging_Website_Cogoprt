@@ -1,0 +1,45 @@
+.banner {
+    background-color: #17ff6c4e;
+    color: #333;
+    padding: 10px;
+    /* text-align: center; */
+    width: 100%;
+    height: auto;
+    margin-bottom: 25px;
+    display: flex;
+    margin-top: 80px;
+   
+
+  }
+  
+  .inner-box-left {
+    flex: 1; 
+    align-items: flex-start;
+    margin-left: 150px;
+    /* height: auto; */
+  }
+
+  .inner-box-left h1{
+    font-size: 45px;
+    background-color: greenyellow;
+  }
+  .imageit{
+    height:300px;
+    padding-right: 20px;;
+    background-size: cover;
+  }
+  .inner-box-left h2{
+    font-size: 30px;
+    background-color: beige;
+  }
+
+  .inner-box-right{
+    flex: 1;
+    align-items: flex-end;
+    margin-left: 450px;
+  }
+
+  .inner-box-right h2{
+    font-size: 25px;
+    background-color: lightpink
+  }
